@@ -1,4 +1,4 @@
-var config = require('./config.json');
+
 
 const credentials = {
     client: {
@@ -22,4 +22,4 @@ const credentials = {
     return returnVal;
   }
   
-getAuthUrl();
+document.getElementById("MS-signin").href=getAuthUrl();
