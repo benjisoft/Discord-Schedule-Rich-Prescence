@@ -1,11 +1,11 @@
 const client = require('discord-rich-presence')('653932521184296960');
  
 client.updatePresence({
-  state: 'slithering',
-  details: '🐍',
+  state: 'Triple BTEC (Computing)',
+  details: '308 With Monika',
   startTimestamp: Date.now(),
   endTimestamp: Date.now() + 1337,
-  largeImageKey: 'snek_large',
-  smallImageKey: 'snek_small',
+  largeImageKey: 'coding',
+  smallImageKey: 'logo',
   instance: true,
 });
