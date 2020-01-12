@@ -10,3 +10,4 @@ Huge thanks to [Flaticons](https://www.flaticon.com/) with their huge selection 
 
 Icon made by Freepik from [www.flaticon.com]
 Icons made by [DinosoftLabs](https://www.flaticon.com/authors/dinosoftlabs)
+Icons made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect)
