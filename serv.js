@@ -26,8 +26,8 @@ function schedule(event) {
         details: event.location,
         // startTimestamp: event.startEPOCH, // Change to EPOCH
         // endTimestamp: event.endEPOCH,
-        largeImageKey: 'logo',
-        smallImageKey: 'coding',
+        largeImageKey: 'coding',
+        smallImageKey: 'logo',
         instance: true,
         });
       });
