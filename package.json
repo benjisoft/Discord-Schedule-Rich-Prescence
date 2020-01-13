@@ -4,7 +4,7 @@
   "description": "Discord Schedule Rich Prescence",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
   "repository": {
@@ -23,6 +23,10 @@
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "electron": "^7.1.8",
+    "request": "^2.88.0",
     "simple-oauth2": "^3.1.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^14.1.1"
   }
 }
