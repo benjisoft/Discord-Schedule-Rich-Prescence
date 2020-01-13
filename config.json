@@ -1,0 +1,12 @@
+{
+    "application": {
+      "id": 653932521184296960,
+      "manifests": [
+        {
+          "label": "calendar-sync/zip",
+          "platforms": ["win32", "win64", "osx"],
+          "locales": ["en-gb"],
+          "local_root": "./"
+        }]
+    }
+}
