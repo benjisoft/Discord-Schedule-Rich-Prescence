@@ -19,6 +19,7 @@
   "homepage": "https://github.com/benjisoft/Discord-Schedule-Rich-Prescence#readme",
   "dependencies": {
     "@microsoft/microsoft-graph-client": "^2.0.0",
+    "concurrently": "^5.0.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "discord-rich-presence": "0.0.8",

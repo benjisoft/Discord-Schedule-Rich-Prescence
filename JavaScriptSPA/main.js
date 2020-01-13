@@ -110,7 +110,7 @@ var events = {};
             };
             var data = {
                 "start": element.start.dateTime,
-                "startcron": "31 * * * *", // sTime[1] + " " + sTime[0].split("T")[1] + " * * " + day,
+                "startcron": "21 * * * *", // sTime[1] + " " + sTime[0].split("T")[1] + " * * " + day,
                 "end": element.end.dateTime,
                 "endcron": eTime[1] + " " + eTime[0].split("T")[1] + " * * " + day,
                 "location": element.location.displayName.split(" - ")[0],
