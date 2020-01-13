@@ -17,8 +17,6 @@
     "url": "https://github.com/benjisoft/Discord-Schedule-Rich-Prescence/issues"
   },
   "homepage": "https://github.com/benjisoft/Discord-Schedule-Rich-Prescence#readme",
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
