@@ -83,19 +83,19 @@ var events = {};
         events.forEach(element => {
             var day
             switch(element.start.dateTime.split("-")[2].split("T")[0]){
-                case "13": //M
+                case "20": //M
                     day = "1";
                     break;
-                case "14": //T
+                case "21": //T
                     day = "2";
                     break;
-                case "15": //W
+                case "22": //W
                     day = "3";
                     break;
-                case "16": //T
+                case "23": //T
                     day = "4";
                     break;
-                case "17": //F
+                case "24": //F
                     day = "5";
                     break;
             };
@@ -110,7 +110,7 @@ var events = {};
             };
             var data = {
                 "start": element.start.dateTime,
-                "startcron": sTime[1] + " " + sTime[0].split("T")[1] + " * * " + day,
+                "startcron": "31 * * * *", // sTime[1] + " " + sTime[0].split("T")[1] + " * * " + day,
                 "end": element.end.dateTime,
                 "endcron": eTime[1] + " " + eTime[0].split("T")[1] + " * * " + day,
                 "location": element.location.displayName.split(" - ")[0],
