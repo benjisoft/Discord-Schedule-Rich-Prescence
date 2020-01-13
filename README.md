@@ -1,1 +1,0 @@
-# Discord-Schedule-Rich-Prescence

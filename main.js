@@ -1,9 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
-const config = require('./config.json')
-const { ipcMain } = require('electron');
-const { session } = require('electron');
+require('./app.js')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -15,13 +13,11 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadURL(`http://localhost:30662/`)
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -55,64 +51,3 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-ipcMain.on('loginPrompt', (event, args) => {
-  let authWindow = new BrowserWindow(
-    {
-      alwaysOnTop: true, // keeps this window on top of others
-      modal: true,
-      autoHideMenuBar: true,
-      parent: mainWindow,
-      frame: true,
-      show: false,
-      webPreferences: {
-        nodeIntegration: false, // No need to specify these if Electron v4+ but showing for demo
-        contextIsolation: true // we can isolate this window
-      }
-    }
-  );
- 
-  authWindow.on('closed', () => {
-    this.authWindow = null;
-  });
- 
-  authWindow.setMenu(null);
- 
-  const filter = { urls: ['https://login.microsoftonline.com/common/oauth2/nativeclient'] };
- 
-  authWindow.webContents.on('did-finish-load', () => {
-    authWindow.show();
-  });
- 
-  authWindow.loadURL(`https://login.microsoftonline.com/common/oauth2/authorize?client_id=`+ config.ms_id + `&response_type=token&redirect_uri=`+config.ms_redirect+`&response_mode=fragment&nonce=678911&state=12345&resource=`+ encodeURIComponent(config.ms_resource));
- 
- 
-  session.defaultSession.webRequest.onCompleted(filter, (details) => {
-    console.log(details)
-    var url = details.url;
-    console.log(url)
-    let accessToken = url.match(/\#(?:access_token)\=([\S\s]*?)\&/)[1];
-    event.returnValue = accessToken;
-    console.log(accessToken)
-    authWindow.close();
-  });
-});
-
-function resetData() {
-  const path = require('path');
-  const { app } = require('electron');
-  const fs = require('fs-extra');
-  const appName = app.getName();
-
-  // Get app directory
-  // on OSX it's /Users/Yourname/Library/Application Support/AppName
-  const getAppPath = path.join(app.getPath('appData'), appName);
-
-  fs.unlink(getAppPath, () => {
-    // callback
-    alert("App data cleared");
-    // You should relaunch the app after clearing the app settings.
-    app.relaunch();
-    app.exit();
-  });
-}
