@@ -1,12 +1,18 @@
 {
     "application": {
-      "id": 653932521184296960,
-      "manifests": [
-        {
-          "label": "calendar-sync/zip",
-          "platforms": ["win32", "win64", "osx"],
-          "locales": ["en-gb"],
-          "local_root": "./"
+        "id": 653932521184296960,
+        "manifests": [{
+            "label": "calendar-sync/zip",
+            "platforms": ["win32", "win64", "macos"],
+            "locales": ["en-GB"],
+            "local_root": "./",
+            "launch_options": [{
+                "name": "DSRP Zip",
+                "executable": "DSRP.zip",
+                "arguments": [],
+                "platforms": ["win32", "win64", "macos"],
+                "working_dir": "./"
+                }]
         }]
     }
 }
